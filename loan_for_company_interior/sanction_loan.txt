@@ -1,0 +1,14 @@
+
+ THIS TO INFORM YOU THAT YOUR LOAN HAS BEEN SANCTION
+********************************************************************************
+ THIS ARE THE DETAILS ABOUT LOAN OF APPLICATION = 8
+ LOAN PRINCIPLE AMOUNT = 12345.0
+ LOAN TENURE = 2.0
+ INREREST RATE = 0.5
+ TOTAL INTEREST = RS. 123.45
+ PROCESSING FEE = RS. 2.469
+ GST ON PROCESSING FEE = RS. 0.44442
+ TOTAL AMOUNT INCLUDING PROCESSING & GST = RS.254879.0
+ NO. OF INSTALLMENTS ARE = 12
+ LOAN MATURITY DATE = 2000-12-12
+********************************************************************************

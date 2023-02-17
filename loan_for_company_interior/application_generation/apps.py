@@ -3,4 +3,4 @@ from django.apps import AppConfig
 
 class ApplicationGeneationConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'application_geneation'
+    name = 'application_generation'

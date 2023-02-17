@@ -50,17 +50,25 @@ INSTALLED_APPS = [
     'customer',
     'disburstment',
     'document_verification',
-    'loan_sanctioning'
+    'loan_sanctioning',
+    'corsheaders'
 ]
+
+AUTH_USER_MODEL = 'admin_app.User'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+]
+
+CORS_ORIGIN_WHITELIST = [
+    'http://localhost:3000',
 ]
 
 ROOT_URLCONF = 'loan_for_company_interior.urls'
@@ -137,10 +145,54 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_USE_TLS = True
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'shoaib5792p@gmail.com'
+EMAIL_HOST_PASSWORD = 'fwxmlxhredrbjdjn'
+
+
 from datetime import timedelta
 
 SIMPLE_JWT = {
     'ACCESS_TOKEN_LIFETIME' : timedelta(days=1),
     'REFRESH_TOKEN_LIFETIME' : timedelta(days=7),
     'AUTH_HEADER_TYPES' : ('Bearer', 'JWT')
+}
+
+CORS_ORIGIN_WHITELIST = [
+    "http://localhost:3000",
+    "http://127.0.0.1:3000"
+    ]
+
+from logging.handlers import TimedRotatingFileHandler
+LOGGING={
+    'version':1,
+    'disable_existing_loggers':True,
+    'formatters':{
+        'main_formatter':{
+            'format':"{asctime} - {levelname} - {name} - {module} - {message} ",
+            'style':"{"
+        },
+    },
+    'handlers':{
+        'console':{
+            'class':"logging.StreamHandler",
+            'formatter':'main_formatter'
+        },
+        'file':{
+            'class':'logging.FileHandler',
+            'filename':'info.log',
+            'formatter':'main_formatter',
+        },
+    },
+    'loggers':{
+        'main':{
+            'handlers':['file','console'],
+            'propagate':True,
+            'level':'INFO',
+
+        },
+    },
 }

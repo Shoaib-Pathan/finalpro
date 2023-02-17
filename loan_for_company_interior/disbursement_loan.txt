@@ -1,0 +1,8 @@
+
+ CHECK THE DETAILED INFORMATION ABOUT YOUR LOAN DISBURSEMENT
+********************************************************************************
+LOAN ID = 7
+PAYMENT MODE = ONLINE
+NET DISBURSED AMOUNT = Rs. 1.0
+AMOUNT DISBURSED TO ACCOUNT NO = 1234
+********************************************************************************
