@@ -15,6 +15,7 @@ import Update_disbursement from './Components/Pages/disburstment/Update_disburse
 import Disbursment_mail from './Components/Pages/disburstment/Disbursment_mail';
 import Show_loan from './Components/Pages/disburstment/Show_loan';
 import Loan_mail from './Components/Pages/disburstment/Loan_mail';
+import Vendor_mail from './Components/Pages/disburstment/Vendor_mail';
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
             <Route path='/add' element={<Vendor/>}/>
             <Route path='/' element={<Home/>}/>
             <Route path='/show' element={<Show_Vendor/>}/>
+            <Route path='/vendormail/:userId' element={<Vendor_mail/>}/>
             <Route path='/update/:userId' element={<Update_Vendor/>}/>
             <Route path='/installments' element={<Installments/>}/>
             <Route path='/show1' element={<Show_Installments/>}/>
@@ -38,8 +40,6 @@ function App() {
             <Route path='/showloan' element={<Show_loan/>}/>
             <Route path='/loanmail/:userId' element={<Loan_mail/>}/>
           </Routes>
-          
-        
         </BrowserRouter>
     </>
   );

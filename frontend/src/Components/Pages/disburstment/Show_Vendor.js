@@ -1,20 +1,24 @@
-import axios from 'axios'
+
 import React, { useEffect, useState } from 'react'
 import { NavLink } from 'react-router-dom';
 import { showvendor } from '../APIServices/APIservises';
 
+
 function Show_Vendor() {
                 
                 const [users, setUser] = useState([]);
+            
+
                 async function fetchallUser(){
                     const result = await showvendor()
-                    setUser(result.data)
-                    
+                    setUser(result.data)      
                 }
 
                 useEffect(()=>{
                     fetchallUser()
                 },[])
+
+               
   return (
     <>
         <h1 style={{color:'red'}}><center>SHOW VENDORS</center></h1>
@@ -60,7 +64,7 @@ function Show_Vendor() {
                                     <td>{obj.ifsc_code}</td>
                                     <td>
                                         <NavLink to={`/update/${obj.id}`}><button className='btn btn-warning btn-sm'>UPDATE</button></NavLink>
-                                        <NavLink to='#'><button className='btn btn-danger btn-sm ms-3'>DELETE</button></NavLink>
+                                        <NavLink to={`/vendormail/${obj.id}`}><button className='btn btn-danger btn-sm ms-3'>SEND MAIL</button></NavLink>
                                     </td>
                                 </tr>
                             )
@@ -70,6 +74,10 @@ function Show_Vendor() {
 
                 </tbody>
             </table>
+            <center>
+            
+            </center>
+
         </div>
     
     </>

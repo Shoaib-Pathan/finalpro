@@ -33,12 +33,12 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('loan1/', include(router.urls)),
     path('loan1/', include('disburstment.urls')),
-    path('loan1/', include('loan_sanctioning.urls'))
-
+    path('loan1/', include('loan_sanctioning.urls')),
+    #path('loan1/', include('vendor.urls'))
     # path('inst1/', include(router.urls)),
     # path('dis1/', include(router.urls)),
     # path('ven1/', include(router.urls))
-
+    
 ]
 
 from django.conf import settings

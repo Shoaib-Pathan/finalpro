@@ -71,6 +71,7 @@ class DisbursementAPI(viewsets.ViewSet):
         return Response(data=serializer.data, status=200)
 def send_new_mail(request, pk):
     print(pk)
+    print('hrllo')
     obj = Disbursement.objects.get(id=pk)
     mail_from = settings.EMAIL_HOST_USER
     sub = 'LOAN DISBURSEMENT'
